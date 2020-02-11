@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form name="oauth-demo" method="post" action="@(Url.Action(controller: "Home", action: "RequestTokenAuth"))">
+    @Html.AntiForgeryToken()
+    <div class="text-center">
+        <table>
+            <thead>
+                <tr>
+                    <td>Key</td>
+                    <td>Value</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Service Token Endpoint:</td>
+                    <td><input type="text" id="token-endpoint" name="token-endpoint" value="https://us.battle.net/oauth/token" /></td>
+                </tr>
+                <tr>
+                    <td>Service Authorization Endpoint:</td>
+                    <td><input type="text" id="authorization-endpoint" name="authorization-endpoint" value="https://us.battle.net/oauth/authorize"></td>
+                </tr>
+                <tr>
+                    <td>Api Endpoint:</td>
+                    <td><input type="text" id="api-endpoint" name="api-endpoint" value="https://us.api.blizzard.com" /></td>
+                </tr>
+                <tr>
+                    <td>Client ID:</td>
+                    <td><input type="text" id="client-id" name="client-id" value="" /></td>
+                </tr>
+                <tr>
+                   <td>Client Secret:</td>
+                   <td><input type="text" id="client-secret" name="client-secret" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Redirect Uri:</td>
+                    <td><input type="text" id="redirect-uri" name="redirect-uri" value="https://localhost:5001/blizzard-callback" /></td>
+                </tr>
+                <tr>
+                    <td>Scopes:</td>
+                    <td><input type="text" id="scopes" name="scopes" value="d3.profile sc2.profile wow.profile" /></td>
+                </tr>
+                <tr>
+                    <td>User:</td>
+                    <td><input type="text" id="user" name="user" value="Matches#1171" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="submit" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form>
